@@ -3,7 +3,6 @@ import tensorflow as tf
 from tensorflow.keras import models, layers
 import os
 from PIL import Image
-import cv2
 import numpy as np
 import pandas as pd
 
