@@ -9,7 +9,7 @@ import pandas as pd
 app = Flask(__name__)
 
 from tensorflow.keras.models import load_model
-model=load_model("finalprojectoldcode.h5")
+model=load_model("./finalprojectoldcode.h5")
 
 picFolder = os.path.join('static', 'pics')
 app.config['UPLOAD_FOLDER'] = picFolder
