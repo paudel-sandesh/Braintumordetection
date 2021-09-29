@@ -9,7 +9,7 @@ import pandas as pd
 app = Flask(__name__)
 
 from tensorflow.keras.models import load_model
-model=load_model("finalprojectoldcode.h5")
+model=load_model("/app/finalprojectoldcode.h5")
 
 picFolder = os.path.join('static', 'pics')
 app.config['UPLOAD_FOLDER'] = picFolder
@@ -27,8 +27,8 @@ def names(number):
 @app.route("/prediction", methods=["POST"])
 def prediction():
 	img = request.files['img']
-	img.save("/home/puspha/Documents/finalproject/static/pics/img.jpg")
-	image = Image.open("/home/puspha/Documents/finalproject/static/pics/img.jpg")
+	img.save("static/pics/img.jpg")
+	image = Image.open("static/pics/img.jpg")
 	x = np.array(image.resize((128,128)))
 	# x = x.reshape(1,256,256,3)
 	x = np.expand_dims(x,axis=0)
